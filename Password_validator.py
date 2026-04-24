@@ -14,15 +14,17 @@ Follow the requirements for each question carefully.
 # Write logic here:
 password = input("Question 1 - Set a password: ")
 len_pass = len(password)
-if len_pass < 6:
-    print("Password is too short")
-elif password == str("123456"):
-    print("Password is too simple")
-elif password == str("password"):
-    print("Password is too simple")
+while len_pass < 6:
+    print ("Password is too short")
+    password = input("Question 1 - Set a password: ")
+    if password == str ("123456"):
+       print("Password is too simple")
+       password = input("Question 1 - Set a password: ")
+    if password == str("password"):
+       print ("Password is too simple")
+       password = input("Question 1 - Set a password: ")
 else:
-    print("Validating...") 
-
+    print("Validating...")
 
 # --- QUESTION 2: THE MULTI-FACTOR SIMULATION ---
 # Ask for two inputs: a password AND a "PIN" (as an integer).
@@ -61,5 +63,3 @@ if pwd_len >= 10 and pwd_len <= 20:
              print("Password Robust!")
          else:
              print("Weakness Detected")
-
-         
