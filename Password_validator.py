@@ -17,14 +17,19 @@ len_pass = len(password)
 while len_pass < 6:
     print ("Password is too short")
     password = input("Question 1 - Set a password: ")
-    if password == str ("123456"):
-       print("Password is too simple")
-       password = input("Question 1 - Set a password: ")
-    if password == str("password"):
-       print ("Password is too simple")
-       password = input("Question 1 - Set a password: ")
+    len_pass = len(password)
+    while password == str ("123456") or password == str ("password"):
+          print("Password is too simple")
+          password = input("Question 1 - Set a password: ")
+    else:
+        len_pass = len(password)
+        len_pass >= 6
 else:
+    len_pass = len(password)
+    len_pass >= 6
     print("Validating...")
+    
+
 
 # --- QUESTION 2: THE MULTI-FACTOR SIMULATION ---
 # Ask for two inputs: a password AND a "PIN" (as an integer).
@@ -41,6 +46,7 @@ elif pwd == str("Admin") and pin != int(9999):
     print("Invalid PIN")
 elif pwd != str("Admin") and pin == int(9999):
     print("Incorrect Password")
+    print("Access Denied")
 else:
     print("Access Denied")
 
